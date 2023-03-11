@@ -288,8 +288,8 @@ int main(int argc, char **argv)
     BSWAP32(Header.ckID)
     BSWAP32(Header.ckSize)
     fwrite(&Header, sizeof(ChunkHeader), 1, ofile);
-    CommChunk.compressionTypeH = 0x5641; // VA
-    CommChunk.compressionTypeL = 0x5043; // PC
+    CommChunk.compressionTypeH = 0x4144; // AD
+    CommChunk.compressionTypeL = 0x5039; // P9
     cChunkPos = ftell(ofile);
     // CommChunk written later
     fwrite(&CommChunk, sizeof(CommonChunk), 1, ofile);
